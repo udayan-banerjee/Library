@@ -252,7 +252,7 @@ body {
 }
 
 .close-button svg {
-    width: 24.001px;
+    width: 24px;
     height: 24px;
     fill: var(--dusty-lilac);
 }
