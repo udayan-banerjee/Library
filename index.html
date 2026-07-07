@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="javascript.js" defer></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="top-container">
+    <h1 id="page-title">BOOKS</h1>
+    <button id="add-book" class="button open-button">Add Book</button>
+  </div>
+  <div class="container">
+  </div>
+
+<dialog class="modal" id="add-book-popup">
+    <button class="close-button" type="button">
+        <svg viewBox="0 0 24 24">
+            <path d="M18.36 19.78L12 13.41l-6.36 6.37-1.42-1.42L10.59 12 4.22 5.64l1.42-1.42L12 10.59l6.36-6.36 1.41 1.41L13.41 12l6.36 6.36z"/>
+        </svg>
+    </button>
+
+    <form id="bookForm" method="dialog">
+        <h2>Add Book</h2>
+
+        <label class="textFields">
+            Title
+            <input type="text" id="book-title" name="title" required autofocus>
+        </label>
+
+        <label class="textFields">
+            Author
+            <input type="text" id="author" name="author" required>
+        </label>
+        <div class="read-status">
+            <label>
+                Read status:
+                <select name="status" id="status" class="status">
+                    <option value="Read">Read</option>
+                    <option value="Not read">Not read</option>
+                </select>
+            </label>
+        </div>
+        <button id="submit-button">
+            Submit
+        </button>
+    </form>
+</dialog>
+
+</body>
+</html>
