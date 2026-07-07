@@ -3,6 +3,17 @@
     src: url("Satoshi-Light.otf");
 }
 
+:root {
+    --lavender-mist: #F7F4FC;
+    --pale-violet: #E8D5F0;
+    --blush-pink: #F5D7E3;
+    --dusty-lilac: #C4B8D8;
+    --deep-plum: #2E2440;
+    /* Not in the original 5 — a lighter tint of deep-plum, used only to
+       give the modal a background distinct from the page body. */
+    --deep-plum-raised: #3D3153;
+}
+
 #title {
     display: flex;
     align-items: center;
@@ -11,6 +22,9 @@
 
 body {
     font-family: "Satoshi";
+    background-color: var(--deep-plum);
+    color: var(--lavender-mist);
+    min-height: 100vh;
 }
 
 .container {
@@ -26,8 +40,10 @@ body {
 
     padding: 20px;
     border-radius: 12px;
-    background-color: rgb(218, 218, 218);
-    box-shadow: 0 4px 12px rgba(0,0,0,.15);
+    background-color: var(--deep-plum-raised);
+    border: 1px solid rgba(196, 184, 216, 0.25);
+    color: var(--lavender-mist);
+    box-shadow: 0 4px 12px rgba(0,0,0,.35);
 }
 
 .top-container {
@@ -38,43 +54,45 @@ body {
     align-items: center;
 }
 
+#page-title {
+    color: var(--lavender-mist);
+}
+
 #add-book {
     border: none;
     width: 8%;
     height: 50px;
     border-radius: 5px;
-    background-color: lightgreen;
+    background-color: var(--pale-violet);
+    color: var(--deep-plum);
+    font-weight: 600;
     cursor: pointer;
 }
 
 #add-book:hover {
-    filter: brightness(95%);
+    filter: brightness(92%);
 }
 
 /* Modal */
 
 .modal {
-    border: 1px solid black;
-    background-color: white;
+    border: 1px solid rgba(196, 184, 216, 0.3);
+    background-color: var(--deep-plum-raised);
+    color: var(--lavender-mist);
     padding: 1em;
-}
-
-.modal::backdrop {
-    background: rgb(0 0 0 / .2);
 }
 
 .modal {
     position: relative;
-    border: none;
     border-radius: 16px;
     padding: 2rem;
     width: 380px;
     max-width: 90vw;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.45);
 }
 
 .modal::backdrop {
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(46, 36, 64, 0.55);
     backdrop-filter: blur(4px);
 }
 
@@ -87,6 +105,7 @@ body {
 .modal h2 {
     margin: 0;
     font-size: 2rem;
+    color: var(--lavender-mist);
 }
 
 .modal .textFields {
@@ -94,19 +113,22 @@ body {
     flex-direction: column;
     gap: 0.4rem;
     font-weight: 600;
+    color: var(--lavender-mist);
 }
 
 .modal input {
     padding: 0.75rem;
-    border: 1px solid #ccc;
+    border: 1px solid var(--dusty-lilac);
     border-radius: 8px;
     font-size: 1rem;
+    background: var(--deep-plum);
+    color: var(--lavender-mist);
 }
 
 .modal input:focus {
     outline: none;
-    border-color: #4CAF50;
-    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+    border-color: var(--pale-violet);
+    box-shadow: 0 0 0 3px rgba(232, 213, 240, 0.25);
 }
 
 .read-status {
@@ -122,21 +144,23 @@ body {
     gap: 0.5rem;
     font-weight: 600;
     font-size: 1rem;
+    color: var(--lavender-mist);
 }
 
 .status {
     padding: 0.75rem 1rem;
     font-size: 1rem;
-    border: 1px solid #ccc;
+    border: 1px solid var(--dusty-lilac);
     border-radius: 8px;
-    background: white;
+    background: var(--deep-plum);
+    color: var(--lavender-mist);
     cursor: pointer;
 }
 
 .status:focus {
     outline: none;
-    border-color: #4CAF50;
-    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+    border-color: var(--pale-violet);
+    box-shadow: 0 0 0 3px rgba(232, 213, 240, 0.25);
 }
 
 .delete-button svg {
@@ -157,34 +181,34 @@ body {
 .delete-button svg {
     width: 22px;
     height: 22px;
-    fill: #666;
+    fill: var(--dusty-lilac);
     transition: fill .2s;
 }
 
 .delete-button:hover svg {
-    fill: #d32f2f;
+    fill: var(--blush-pink);
 }
 
 .toggle-button {
     padding: 0.6rem 1rem;
     font-size: 0.9rem;
     font-weight: 600;
-    border: 1px solid #4CAF50;
+    border: 1px solid var(--pale-violet);
     border-radius: 8px;
-    background: white;
-    color: #4CAF50;
+    background: transparent;
+    color: var(--pale-violet);
     cursor: pointer;
     transition: background 0.2s, color 0.2s, box-shadow 0.2s;
 }
 
 .toggle-button:hover {
-    background: #4CAF50;
-    color: white;
+    background: var(--pale-violet);
+    color: var(--deep-plum);
 }
 
 .toggle-button:focus {
     outline: none;
-    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+    box-shadow: 0 0 0 3px rgba(232, 213, 240, 0.25);
 }
 
 
@@ -195,15 +219,15 @@ body {
     padding: .9rem;
     border: none;
     border-radius: 8px;
-    background: #4CAF50;
-    color: white;
+    background: var(--blush-pink);
+    color: var(--deep-plum);
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
 }
 
 #submit-button:hover {
-    background: #43a047;
+    filter: brightness(92%);
 }
 
 /* Close Icon */
@@ -224,11 +248,11 @@ body {
 }
 
 .close-button:hover {
-    background: rgba(0,0,0,.08);
+    background: rgba(196, 184, 216, 0.15);
 }
 
 .close-button svg {
     width: 24px;
     height: 24px;
-    fill: #222;
+    fill: var(--dusty-lilac);
 }
